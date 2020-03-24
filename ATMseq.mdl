@@ -1,0 +1,1377 @@
+
+(object Petal
+    version    	42
+    _written   	"Rose 4.5.8054a"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5A7D5E3E0209"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5A7D5E3E020B"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list
+	    (object Mechanism @1
+		logical_models 	(list unit_reference_list
+		    (object Object "User"
+			quid       	"5A7D5F0501D5"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5A7D5F7B0171"
+				supplier   	"ATM"
+				quidu      	"5A7D5F0E000D"
+				messages   	(list Messages
+				    (object Message "1:Isert Card"
+					quid       	"5A7D5F7B0172"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	0)
+				    (object Message "6:Eject card"
+					quid       	"5A7D605B00CF"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	""
+					ordinal    	5)
+				    (object Message "8:Enter Deposite Amount"
+					quid       	"5A7D6120028B"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	7)
+				    (object Message "13:Receive Cash"
+					quid       	"5A7D638A03BE"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	""
+					ordinal    	12))))
+			persistence 	"Transient"
+			multi      	FALSE)
+		    (object Object "ATM"
+			quid       	"5A7D5F0E000D"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5A7D5F9D0379"
+				supplier   	"Controller"
+				quidu      	"5A7D5F1B006E"
+				messages   	(list Messages
+				    (object Message "2:Verify Pin"
+					quid       	"5A7D5F9D037A"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	1)
+				    (object Message "9:Process Transaction"
+					quid       	"5A7D624100EF"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	8)
+				    (object Message "12:Transaction Successful"
+					quid       	"5A7D635F0176"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	""
+					ordinal    	11)))
+			    (object Link
+				quid       	"5A7D60EE001A"
+				supplier   	"ATM"
+				quidu      	"5A7D5F0E000D"
+				messages   	(list Messages
+				    (object Message "7:Request Amount"
+					quid       	"5A7D60EE001B"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	6))))
+			persistence 	"Transient"
+			multi      	FALSE)
+		    (object Object "Controller"
+			quid       	"5A7D5F1B006E"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5A7D5FB6027A"
+				supplier   	"Database"
+				quidu      	"5A7D5F3A007E"
+				messages   	(list Messages
+				    (object Message "3:Verification"
+					quid       	"5A7D5FB6027B"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	2)
+				    (object Message "4:Permitted"
+					quid       	"5A7D5FE801FB"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	""
+					ordinal    	3)
+				    (object Message "5:Denied"
+					quid       	"5A7D5FED018B"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	""
+					ordinal    	4)
+				    (object Message "10:Withdraw(Checking account)"
+					quid       	"5A7D62B603A9"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	9))))
+			persistence 	"Transient"
+			multi      	FALSE)
+		    (object Object "Database"
+			quid       	"5A7D5F3A007E"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5A7D62EA0022"
+				supplier   	"Database"
+				quidu      	"5A7D5F3A007E"
+				messages   	(list Messages
+				    (object Message "11:Withdraw Successful"
+					quid       	"5A7D62EA0023"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	""
+					ordinal    	10))))
+			persistence 	"Transient"
+			multi      	FALSE))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5A7D5E3E02C4"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))
+	    (object InteractionDiagram "NewDiagram"
+		mechanism_ref 	@1
+		quid       	"5A7D5E500070"
+		title      	"NewDiagram"
+		zoom       	75
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	142
+		items      	(list diagram_item_list
+		    (object InterObjView "User" @2
+			location   	(448, 224)
+			font       	(object Font
+			    underline  	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(448, 224)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"User")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A7D5F0501D5"
+			width      	300
+			height     	2385
+			icon_height 	0
+			icon_width 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @3
+			    location   	(448, 368)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @4
+			    location   	(448, 1072)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @5
+			    location   	(448, 1600)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @6
+			    location   	(448, 2400)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE))
+		    (object InterObjView "ATM" @7
+			location   	(848, 224)
+			font       	(object Font
+			    underline  	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@7
+			    location   	(848, 224)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"ATM")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A7D5F0E000D"
+			width      	300
+			height     	2385
+			icon_height 	0
+			icon_width 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @8
+			    location   	(848, 368)
+			    line_color 	3342489
+			    InterObjView 	@7
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @9
+			    location   	(848, 528)
+			    line_color 	3342489
+			    InterObjView 	@7
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @10
+			    location   	(848, 1072)
+			    line_color 	3342489
+			    InterObjView 	@7
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @11
+			    location   	(848, 1280)
+			    line_color 	3342489
+			    InterObjView 	@7
+			    height     	168
+			    y_coord    	108
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @12
+			    location   	(848, 1600)
+			    line_color 	3342489
+			    InterObjView 	@7
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @13
+			    location   	(848, 1744)
+			    line_color 	3342489
+			    InterObjView 	@7
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @14
+			    location   	(848, 2240)
+			    line_color 	3342489
+			    InterObjView 	@7
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @15
+			    location   	(848, 2400)
+			    line_color 	3342489
+			    InterObjView 	@7
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE))
+		    (object InterObjView "Controller" @16
+			location   	(1280, 224)
+			font       	(object Font
+			    underline  	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@16
+			    location   	(1280, 224)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Controller")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A7D5F1B006E"
+			width      	300
+			height     	2385
+			icon_height 	0
+			icon_width 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @17
+			    location   	(1280, 528)
+			    line_color 	3342489
+			    InterObjView 	@16
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @18
+			    location   	(1280, 640)
+			    line_color 	3342489
+			    InterObjView 	@16
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @19
+			    location   	(1280, 800)
+			    line_color 	3342489
+			    InterObjView 	@16
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @20
+			    location   	(1280, 976)
+			    line_color 	3342489
+			    InterObjView 	@16
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @21
+			    location   	(1280, 1744)
+			    line_color 	3342489
+			    InterObjView 	@16
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @22
+			    location   	(1280, 1856)
+			    line_color 	3342489
+			    InterObjView 	@16
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @23
+			    location   	(1280, 2240)
+			    line_color 	3342489
+			    InterObjView 	@16
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE))
+		    (object InterObjView "Database" @24
+			location   	(1712, 224)
+			font       	(object Font
+			    underline  	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@24
+			    location   	(1712, 224)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Database")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A7D5F3A007E"
+			width      	300
+			height     	2385
+			icon_height 	0
+			icon_width 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @25
+			    location   	(1712, 640)
+			    line_color 	3342489
+			    InterObjView 	@24
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @26
+			    location   	(1712, 800)
+			    line_color 	3342489
+			    InterObjView 	@24
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @27
+			    location   	(1712, 976)
+			    line_color 	3342489
+			    InterObjView 	@24
+			    height     	120
+			    y_coord    	60
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @28
+			    location   	(1712, 1856)
+			    line_color 	3342489
+			    InterObjView 	@24
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @29
+			    location   	(1712, 2032)
+			    line_color 	3342489
+			    InterObjView 	@24
+			    height     	184
+			    y_coord    	124
+			    Nested     	FALSE))
+		    (object InterMessView "" @30
+			location   	(0, 368)
+			label      	(object SegLabel @31
+			    Parent_View 	@30
+			    location   	(648, 341)
+			    quidu      	"5A7D5F7B0172"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	204
+			    justify    	0
+			    label      	"1:Isert Card"
+			    pctDist    	0.500000
+			    height     	28
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@7
+			Focus_Src  	@3
+			Focus_Entry 	@8
+			origin     	(464, 368)
+			terminus   	(832, 368)
+			ordinal    	0)
+		    (object InterMessView "" @32
+			location   	(0, 528)
+			label      	(object SegLabel @33
+			    Parent_View 	@32
+			    location   	(1050, 485)
+			    quidu      	"5A7D5F9D037A"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	208
+			    justify    	0
+			    label      	"2:Verify Pin"
+			    pctDist    	0.465000
+			    height     	44
+			    orientation 	0)
+			line_color 	3342489
+			client     	@7
+			supplier   	@16
+			Focus_Src  	@9
+			Focus_Entry 	@17
+			origin     	(864, 528)
+			terminus   	(1264, 528)
+			ordinal    	1)
+		    (object InterMessView "" @34
+			location   	(0, 640)
+			label      	(object SegLabel @35
+			    Parent_View 	@34
+			    location   	(1496, 598)
+			    quidu      	"5A7D5FB6027B"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	229
+			    justify    	0
+			    label      	"3:Verification"
+			    pctDist    	0.500000
+			    height     	43
+			    orientation 	0)
+			line_color 	3342489
+			client     	@16
+			supplier   	@24
+			Focus_Src  	@18
+			Focus_Entry 	@25
+			origin     	(1296, 640)
+			terminus   	(1696, 640)
+			ordinal    	2)
+		    (object InterMessView "" @36
+			location   	(0, 800)
+			label      	(object SegLabel @37
+			    Parent_View 	@36
+			    location   	(1481, 757)
+			    quidu      	"5A7D5FE801FB"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	200
+			    justify    	0
+			    label      	"4:Permitted"
+			    pctDist    	0.537500
+			    height     	44
+			    orientation 	1)
+			line_color 	3342489
+			client     	@24
+			supplier   	@16
+			Focus_Src  	@26
+			Focus_Entry 	@19
+			origin     	(1696, 800)
+			terminus   	(1296, 800)
+			ordinal    	3)
+		    (object InterMessView "" @38
+			location   	(0, 976)
+			label      	(object SegLabel @39
+			    Parent_View 	@38
+			    location   	(1496, 932)
+			    quidu      	"5A7D5FED018B"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	154
+			    justify    	0
+			    label      	"5:Denied"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@24
+			supplier   	@16
+			Focus_Src  	@27
+			Focus_Entry 	@20
+			origin     	(1696, 976)
+			terminus   	(1296, 976)
+			ordinal    	4)
+		    (object InterMessView "" @40
+			location   	(0, 1072)
+			label      	(object SegLabel @41
+			    Parent_View 	@40
+			    location   	(648, 1029)
+			    quidu      	"5A7D605B00CF"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	208
+			    justify    	0
+			    label      	"6:Eject card"
+			    pctDist    	0.500000
+			    height     	44
+			    orientation 	1)
+			line_color 	3342489
+			client     	@7
+			supplier   	@2
+			Focus_Src  	@10
+			Focus_Entry 	@4
+			origin     	(832, 1072)
+			terminus   	(464, 1072)
+			ordinal    	5)
+		    (object SelfMessView "" @42
+			location   	(0, 1328)
+			label      	(object SegLabel @43
+			    Parent_View 	@42
+			    location   	(1032, 1285)
+			    quidu      	"5A7D60EE001B"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	325
+			    justify    	0
+			    label      	"7:Request Amount"
+			    pctDist    	1.120000
+			    height     	44
+			    orientation 	0)
+			line_color 	3342489
+			client     	@7
+			supplier   	@7
+			Focus_Src  	@11
+			origin     	(864, 1328)
+			terminus   	(1014, 1328)
+			ordinal    	6)
+		    (object InterMessView "" @44
+			location   	(0, 1600)
+			label      	(object SegLabel @45
+			    Parent_View 	@44
+			    location   	(598, 1559)
+			    quidu      	"5A7D6120028B"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	433
+			    justify    	0
+			    label      	"8:Enter Deposite Amount"
+			    pctDist    	0.364130
+			    height     	42
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@7
+			Focus_Src  	@5
+			Focus_Entry 	@12
+			origin     	(464, 1600)
+			terminus   	(832, 1600)
+			ordinal    	7)
+		    (object InterMessView "" @46
+			location   	(0, 1744)
+			label      	(object SegLabel @47
+			    Parent_View 	@46
+			    location   	(1063, 1697)
+			    quidu      	"5A7D624100EF"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	387
+			    justify    	0
+			    label      	"9:Process Transaction"
+			    pctDist    	0.497500
+			    height     	48
+			    orientation 	0)
+			line_color 	3342489
+			client     	@7
+			supplier   	@16
+			Focus_Src  	@13
+			Focus_Entry 	@21
+			origin     	(864, 1744)
+			terminus   	(1264, 1744)
+			ordinal    	8)
+		    (object InterMessView "" @48
+			location   	(0, 1856)
+			label      	(object SegLabel @49
+			    Parent_View 	@48
+			    location   	(1593, 1814)
+			    quidu      	"5A7D62B603A9"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	550
+			    justify    	0
+			    label      	"10:Withdraw(Checking account)"
+			    pctDist    	0.742500
+			    height     	43
+			    orientation 	0)
+			line_color 	3342489
+			client     	@16
+			supplier   	@24
+			Focus_Src  	@22
+			Focus_Entry 	@28
+			origin     	(1296, 1856)
+			terminus   	(1696, 1856)
+			ordinal    	9)
+		    (object SelfMessView "" @50
+			location   	(0, 2096)
+			label      	(object SegLabel @51
+			    Parent_View 	@50
+			    location   	(1965, 2070)
+			    quidu      	"5A7D62EA0023"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	417
+			    justify    	0
+			    label      	"11:Withdraw Successful"
+			    pctDist    	1.580000
+			    height     	27
+			    orientation 	0)
+			line_color 	3342489
+			client     	@24
+			supplier   	@24
+			Focus_Src  	@29
+			origin     	(1728, 2096)
+			terminus   	(1878, 2096)
+			ordinal    	10)
+		    (object InterMessView "" @52
+			location   	(0, 2240)
+			label      	(object SegLabel @53
+			    Parent_View 	@52
+			    location   	(1095, 2198)
+			    quidu      	"5A7D635F0176"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	462
+			    justify    	0
+			    label      	"12:Transaction Successful"
+			    pctDist    	0.422500
+			    height     	43
+			    orientation 	1)
+			line_color 	3342489
+			client     	@16
+			supplier   	@7
+			Focus_Src  	@23
+			Focus_Entry 	@14
+			origin     	(1264, 2240)
+			terminus   	(864, 2240)
+			ordinal    	11)
+		    (object InterMessView "" @54
+			location   	(0, 2400)
+			label      	(object SegLabel @55
+			    Parent_View 	@54
+			    location   	(647, 2355)
+			    quidu      	"5A7D638A03BE"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	304
+			    justify    	0
+			    label      	"13:Receive Cash"
+			    pctDist    	0.502717
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@7
+			supplier   	@2
+			Focus_Src  	@15
+			Focus_Entry 	@6
+			origin     	(832, 2400)
+			terminus   	(464, 2400)
+			ordinal    	12)))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5A7D5E3E020A"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5A7D5E3E020C"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5A7D5E3E02C8"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5A7D5E3E020C"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5A7D5E3E02C3"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"5A7D5E3E020D"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5A7D5E3E020F"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"DDL"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"DDL"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBase"
+			value      	("DataBaseSet" 800))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBaseSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"DDL"
+				name       	"ANSI"
+				value      	800)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Oracle"
+				value      	801)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"SQLServer"
+				value      	802)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Sybase"
+				value      	803)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Watcom"
+				value      	804)))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnName"
+			value      	"Id")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnType"
+			value      	"NUMBER(5)")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"ViewName"
+			value      	"V_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"TableName"
+			value      	"T_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"InheritSuffix"
+			value      	"_V")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DropClause"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"BaseViews"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DDLScriptFilename"
+			value      	"DDL1.SQL")))
+	    (object Attribute
+		tool       	"DDL"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"DDL"
+			name       	"ColumnType"
+			value      	"VARCHAR")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Length"
+			value      	"")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"NullsOK"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKey"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Unique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"CompositeUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"CheckConstraint"
+			value      	"")))
+	    (object Attribute
+		tool       	"DDL"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"IDL"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CreateMissingDirectories"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"StopOnError"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Directory"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GeneratePreserveRegions"
+			value      	TRUE)))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"ImplementationType"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"ConstValue"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateDefaultSpecifier"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"DefaultSpecifier"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IDLElement"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IDLSpecificationType"
+			value      	("IDLSpecSet" 22))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IDLSpecSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Interface"
+				value      	22)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Typedef"
+				value      	54)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Enumeration"
+				value      	8)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Const"
+				value      	71)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Exception"
+				value      	61)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Struct"
+				value      	51)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Union"
+				value      	81)))))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CmIdentification"
+			value      	(value Text "  %X% %Q% %Z% %W%"))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"FileName"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateIDLModule"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"InclusionProtectionSymbol"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"AdditionalIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IncludeBySimpleName"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Module-Body"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CmIdentification"
+			value      	(value Text "  %X% %Q% %Z% %W%"))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"FileName"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"AdditionalIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IncludeBySimpleName"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"OperationIsOneWay"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Context"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Raises"
+			value      	"")))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CaseSpecifier"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"DataMemberName"
+			value      	"$relationship")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IsReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IsConst"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"ConstValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Has"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"NameIfUnlabeled"
+			value      	"the_$supplier")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"DataMemberName"
+			value      	"$relationship")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateForwardReference"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IsReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"BoundedHasRelType"
+			value      	("HasRelTypeSet" 47))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"HasRelTypeSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Array"
+				value      	24)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Sequence"
+				value      	47)))))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"NameIfUnlabeled"
+			value      	"the_$supplier")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"DataMemberName"
+			value      	"$relationship")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateForwardReference"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IsReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"BoundedRoleType"
+			value      	("AssocTypeSet" 47))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"AssocTypeSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Array"
+				value      	24)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Sequence"
+				value      	47)))))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Uses"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateForwardReference"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Subsystem"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Directory"
+			value      	"AUTO GENERATE")))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Java"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"CreateMissingDirectories"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"StopOnError"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Directory"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"Java"
+			name       	"UsePrefixes"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"InstanceVariablePrefix"
+			value      	"m_")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ClassVariablePrefix"
+			value      	"s_")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultAttributeDataType"
+			value      	"int")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultOperationReturnType"
+			value      	"void")))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDefaultConstructor"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ConstructorIs"
+			value      	("Ctor_Set" 62))
+		    (object Attribute
+			tool       	"Java"
+			name       	"Ctor_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Public"
+				value      	62)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Protected"
+				value      	63)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Private"
+				value      	64)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFinalizer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateStaticInitializer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateInstanceInitializer"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"CmIdentification"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"AdditionalImports"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Module-Body"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"CmIdentification"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"AdditionalImports"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Abstract"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Static"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Native"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Synchronized"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Transient"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Volatile"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ContainerClass"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"InitialValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Transient"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Volatile"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"SCC"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"5A7D5E3E020E"))

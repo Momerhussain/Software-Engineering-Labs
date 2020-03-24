@@ -1,0 +1,1539 @@
+
+(object Petal
+    version    	42
+    _written   	"Rose 4.5.8054a"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5AAB5D680164"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5AAB5D680166"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5AAB5D680179"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5AAB5D680165"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5AAB5D680167"
+	logical_models 	(list unit_reference_list
+	    (object Class "doctor"
+		quid       	"5AAB5DAE0268"
+		operations 	(list Operations
+		    (object Operation "treatment"
+			quid       	"5AAB5E2800C4"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "prescription"
+			quid       	"5AAB5E2F01FE"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "surgery"
+			quid       	"5AAB5E3902DE"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "consultancy"
+			quid       	"5AAB5E41030F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "check reports"
+			quid       	"5AAB5E50002E"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"5AAB5E0E01D6"
+			exportControl 	"Public")
+		    (object ClassAttribute "id"
+			quid       	"5AAB5E140076"
+			exportControl 	"Public")
+		    (object ClassAttribute "specification"
+			quid       	"5AAB5E1B004E"
+			exportControl 	"Public"))
+		language   	"Java")
+	    (object Class "patient"
+		quid       	"5AAB5DBC0299"
+		operations 	(list Operations
+		    (object Operation "appointment"
+			quid       	"5AAB5E8501CE"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "report doctor"
+			quid       	"5AAB5E8D0040"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "treatment"
+			quid       	"5AAB5E930120"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "operations"
+			quid       	"5AAB5E9902D0"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"5AAB5E5B0105"
+			exportControl 	"Public")
+		    (object ClassAttribute "id"
+			quid       	"5AAB5E5D0167"
+			exportControl 	"Public")
+		    (object ClassAttribute "disease"
+			quid       	"5AAB5E5E004F"
+			exportControl 	"Public"))
+		language   	"Java")
+	    (object Class "hospital"
+		quid       	"5AAB5DC80200"
+		used_nodes 	(list uses_relationship_list
+		    (object Uses_Relationship
+			quid       	"5AAB613300E1"
+			supplier   	"Logical View::administration"
+			quidu      	"5AAB5E030204"))
+		operations 	(list Operations
+		    (object Operation "administaion"
+			quid       	"5AAB5F050009"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "record"
+			quid       	"5AAB5F0B0262"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "add patient"
+			quid       	"5AAB5F1401D2"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "discharge"
+			quid       	"5AAB5F1D017A"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "add surgeon"
+			quid       	"5AAB5F22015A"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"5AAB5EB1024E"
+			exportControl 	"Public")
+		    (object ClassAttribute "license no."
+			quid       	"5AAB5EC60051"
+			exportControl 	"Public")
+		    (object ClassAttribute "place"
+			quid       	"5AAB5EF5009A"
+			exportControl 	"Public"))
+		language   	"Java")
+	    (object Class "nurse"
+		quid       	"5AAB5DD20269"
+		operations 	(list Operations
+		    (object Operation "assist"
+			quid       	"5AAB60A30078"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "patient prescriptions"
+			quid       	"5AAB60A802AA"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"5AAB608E0030"
+			exportControl 	"Public")
+		    (object ClassAttribute "id"
+			quid       	"5AAB60900389"
+			exportControl 	"Public")
+		    (object ClassAttribute "ward"
+			quid       	"5AAB60910201"
+			exportControl 	"Public"))
+		language   	"Java")
+	    (object Class "surgeon"
+		quid       	"5AAB5DD70331"
+		language   	"Java")
+	    (object Class "physician"
+		quid       	"5AAB5DD90109"
+		language   	"Java")
+	    (object Class "receptionist"
+		quid       	"5AAB5DF50321"
+		operations 	(list Operations
+		    (object Operation "appointment availability"
+			quid       	"5AAB5FB80364"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "room availibility"
+			quid       	"5AAB60130047"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "booked rooms"
+			quid       	"5AAB601A0257"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "add patient"
+			quid       	"5AAB60220247"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "patient details"
+			quid       	"5AAB602A01C8"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "patient billing"
+			quid       	"5AAB6035024F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "naem"
+			quid       	"5AAB5FAF027B"
+			exportControl 	"Public")
+		    (object ClassAttribute "id"
+			quid       	"5AAB5FB2002D"
+			exportControl 	"Public"))
+		language   	"Java")
+	    (object Class "administration"
+		quid       	"5AAB5E030204"
+		operations 	(list Operations
+		    (object Operation "maintain patient record"
+			quid       	"5AAB60700006"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "maintain bill"
+			quid       	"5AAB607801E9"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "clearance"
+			quid       	"5AAB607C0079"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"5AAB606502CF"
+			exportControl 	"Public")
+		    (object ClassAttribute "id"
+			quid       	"5AAB60690381"
+			exportControl 	"Public"))
+		language   	"Java")
+	    (object Association "$UNNAMED$0"
+		quid       	"5AAB60FB003F"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$1"
+			quid       	"5AAB60FB0288"
+			supplier   	"Logical View::patient"
+			quidu      	"5AAB5DBC0299"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$2"
+			quid       	"5AAB60FB0289"
+			supplier   	"Logical View::doctor"
+			quidu      	"5AAB5DAE0268"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$3"
+		quid       	"5AAB6102002B"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$4"
+			quid       	"5AAB610202C8"
+			supplier   	"Logical View::receptionist"
+			quidu      	"5AAB5DF50321"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$5"
+			quid       	"5AAB610202C9"
+			supplier   	"Logical View::patient"
+			quidu      	"5AAB5DBC0299"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$6"
+		quid       	"5AAB6105039A"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$7"
+			quid       	"5AAB61060241"
+			supplier   	"Logical View::administration"
+			quidu      	"5AAB5E030204"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$8"
+			quid       	"5AAB61060242"
+			supplier   	"Logical View::patient"
+			quidu      	"5AAB5DBC0299"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$9"
+		quid       	"5AAB610902EA"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$10"
+			quid       	"5AAB610A00D0"
+			supplier   	"Logical View::hospital"
+			quidu      	"5AAB5DC80200"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$11"
+			quid       	"5AAB610A00D1"
+			supplier   	"Logical View::patient"
+			quidu      	"5AAB5DBC0299"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$12"
+		quid       	"5AAB610E0322"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$13"
+			quid       	"5AAB610F0250"
+			supplier   	"Logical View::nurse"
+			quidu      	"5AAB5DD20269"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$14"
+			quid       	"5AAB610F0251"
+			supplier   	"Logical View::doctor"
+			quidu      	"5AAB5DAE0268"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$15"
+		quid       	"5AAB61150387"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$16"
+			quid       	"5AAB61160250"
+			supplier   	"Logical View::doctor"
+			quidu      	"5AAB5DAE0268"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$17"
+			quid       	"5AAB61160251"
+			supplier   	"Logical View::hospital"
+			quidu      	"5AAB5DC80200"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$18"
+		quid       	"5AAB611F0288"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$19"
+			quid       	"5AAB612000D8"
+			supplier   	"Logical View::nurse"
+			quidu      	"5AAB5DD20269"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$20"
+			quid       	"5AAB612000D9"
+			supplier   	"Logical View::hospital"
+			quidu      	"5AAB5DC80200"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$21"
+		quid       	"5AAB612903A8"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$22"
+			quid       	"5AAB612A0221"
+			supplier   	"Logical View::receptionist"
+			quidu      	"5AAB5DF50321"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$23"
+			quid       	"5AAB612A0222"
+			supplier   	"Logical View::hospital"
+			quidu      	"5AAB5DC80200"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$24"
+		quid       	"5AAB612D02CA"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$25"
+			quid       	"5AAB612E00D0"
+			supplier   	"Logical View::receptionist"
+			quidu      	"5AAB5DF50321"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$26"
+			quid       	"5AAB612E00D1"
+			supplier   	"Logical View::administration"
+			quidu      	"5AAB5E030204"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$27"
+		quid       	"5AAB613B0132"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$28"
+			quid       	"5AAB613C0201"
+			supplier   	"Logical View::surgeon"
+			quidu      	"5AAB5DD70331"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$29"
+			quid       	"5AAB613C0202"
+			supplier   	"Logical View::doctor"
+			quidu      	"5AAB5DAE0268"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$30"
+		quid       	"5AAB61400371"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$31"
+			quid       	"5AAB614102D1"
+			supplier   	"Logical View::physician"
+			quidu      	"5AAB5DD90109"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$32"
+			quid       	"5AAB614102D2"
+			supplier   	"Logical View::doctor"
+			quidu      	"5AAB5DAE0268"
+			is_navigable 	TRUE))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "hospital"
+		quid       	"5AAB5D68016B"
+		title      	"hospital"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Logical View::patient" @1
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1040, 320)
+			label      	(object ItemLabel
+			    Parent_View 	@1
+			    location   	(889, 89)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	302
+			    justify    	0
+			    label      	"patient")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5AAB5DBC0299"
+			compartment 	(object Compartment
+			    Parent_View 	@1
+			    location   	(889, 149)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	8
+			    max_width  	300)
+			width      	320
+			height     	486
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::nurse" @2
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(400, 1456)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(180, 1275)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	440
+			    justify    	0
+			    label      	"nursea")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5AAB5DD20269"
+			compartment 	(object Compartment
+			    Parent_View 	@2
+			    location   	(180, 1335)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	6
+			    max_width  	437)
+			width      	458
+			height     	386
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::hospital" @3
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1104, 1104)
+			label      	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(953, 848)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	302
+			    justify    	0
+			    label      	"hospital")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5AAB5DC80200"
+			compartment 	(object Compartment
+			    Parent_View 	@3
+			    location   	(953, 908)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	9
+			    max_width  	300)
+			width      	320
+			height     	536
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$9" @4
+			location   	(1070, 699)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB610902EA"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$10" @5
+				Parent_View 	@4
+				location   	(30, 379)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB610A00D0"
+				client     	@4
+				supplier   	@3
+				line_style 	0)
+			    (object RoleView "$UNNAMED$11" @6
+				Parent_View 	@4
+				location   	(30, 379)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB610A00D1"
+				client     	@4
+				supplier   	@1
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$18" @7
+			location   	(786, 1261)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB611F0288"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$19" @8
+				Parent_View 	@7
+				location   	(-318, 157)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB612000D8"
+				client     	@7
+				supplier   	@2
+				line_style 	0)
+			    (object RoleView "$UNNAMED$20" @9
+				Parent_View 	@7
+				location   	(-318, 157)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB612000D9"
+				client     	@7
+				supplier   	@3
+				line_style 	0)))
+		    (object ClassView "Class" "Logical View::administration" @10
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1856, 992)
+			label      	(object ItemLabel
+			    Parent_View 	@10
+			    location   	(1613, 811)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	486
+			    justify    	0
+			    label      	"administration")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5AAB5E030204"
+			compartment 	(object Compartment
+			    Parent_View 	@10
+			    location   	(1613, 871)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	6
+			    max_width  	484)
+			width      	504
+			height     	386
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$6" @11
+			location   	(1410, 625)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB6105039A"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$7" @12
+				Parent_View 	@11
+				location   	(370, 305)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB61060241"
+				client     	@11
+				supplier   	@10
+				line_style 	0)
+			    (object RoleView "$UNNAMED$8" @13
+				Parent_View 	@11
+				location   	(370, 305)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB61060242"
+				client     	@11
+				supplier   	@1
+				line_style 	0)))
+		    (object ClassView "Class" "Logical View::receptionist" @14
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1904, 272)
+			label      	(object ItemLabel
+			    Parent_View 	@14
+			    location   	(1657, 16)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	494
+			    justify    	0
+			    label      	"receptionist")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5AAB5DF50321"
+			compartment 	(object Compartment
+			    Parent_View 	@14
+			    location   	(1657, 76)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	9
+			    max_width  	491)
+			width      	512
+			height     	536
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$3" @15
+			location   	(1423, 298)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB6102002B"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$4" @16
+				Parent_View 	@15
+				location   	(383, -22)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB610202C8"
+				client     	@15
+				supplier   	@14
+				line_style 	0)
+			    (object RoleView "$UNNAMED$5" @17
+				Parent_View 	@15
+				location   	(383, -22)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB610202C9"
+				client     	@15
+				supplier   	@1
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$21" @18
+			location   	(1455, 736)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB612903A8"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$22" @19
+				Parent_View 	@18
+				location   	(351, -368)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB612A0221"
+				client     	@18
+				supplier   	@14
+				line_style 	0)
+			    (object RoleView "$UNNAMED$23" @20
+				Parent_View 	@18
+				location   	(351, -368)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB612A0222"
+				client     	@18
+				supplier   	@3
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$24" @21
+			location   	(1877, 669)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB612D02CA"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$25" @22
+				Parent_View 	@21
+				location   	(21, -323)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB612E00D0"
+				client     	@21
+				supplier   	@14
+				line_style 	0)
+			    (object RoleView "$UNNAMED$26" @23
+				Parent_View 	@21
+				location   	(21, -323)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB612E00D1"
+				client     	@21
+				supplier   	@10
+				line_style 	0)))
+		    (object UsesView "" @24
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB613300E1"
+			client     	@3
+			supplier   	@10
+			line_style 	0)
+		    (object ClassView "Class" "Logical View::surgeon" @25
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(144, 1024)
+			label      	(object ItemLabel
+			    Parent_View 	@25
+			    location   	(37, 973)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	214
+			    justify    	0
+			    label      	"surgeon")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5AAB5DD70331"
+			width      	232
+			height     	126
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::doctor" @26
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(288, 432)
+			label      	(object ItemLabel
+			    Parent_View 	@26
+			    location   	(127, 176)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	322
+			    justify    	0
+			    label      	"doctor")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5AAB5DAE0268"
+			compartment 	(object Compartment
+			    Parent_View 	@26
+			    location   	(127, 236)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	9
+			    max_width  	319)
+			width      	340
+			height     	536
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$0" @27
+			location   	(668, 374)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB60FB003F"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$1" @28
+				Parent_View 	@27
+				location   	(380, -58)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB60FB0288"
+				client     	@27
+				supplier   	@1
+				line_style 	0)
+			    (object RoleView "$UNNAMED$2" @29
+				Parent_View 	@27
+				location   	(380, -58)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB60FB0289"
+				client     	@27
+				supplier   	@26
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$12" @30
+			location   	(347, 981)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB610E0322"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$13" @31
+				Parent_View 	@30
+				location   	(59, 549)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB610F0250"
+				client     	@30
+				supplier   	@2
+				line_style 	0)
+			    (object RoleView "$UNNAMED$14" @32
+				Parent_View 	@30
+				location   	(59, 549)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB610F0251"
+				client     	@30
+				supplier   	@26
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$15" @33
+			location   	(700, 771)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB61150387"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$16" @34
+				Parent_View 	@33
+				location   	(-436, -301)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB61160250"
+				client     	@33
+				supplier   	@26
+				line_style 	0)
+			    (object RoleView "$UNNAMED$17" @35
+				Parent_View 	@33
+				location   	(-436, -301)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB61160251"
+				client     	@33
+				supplier   	@3
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$27" @36
+			location   	(190, 830)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB613B0132"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$28" @37
+				Parent_View 	@36
+				location   	(-98, 398)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB613C0201"
+				client     	@36
+				supplier   	@25
+				line_style 	0)
+			    (object RoleView "$UNNAMED$29" @38
+				Parent_View 	@36
+				location   	(-98, 398)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB613C0202"
+				client     	@36
+				supplier   	@26
+				line_style 	0)))
+		    (object ClassView "Class" "Logical View::physician" @39
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(560, 1040)
+			label      	(object ItemLabel
+			    Parent_View 	@39
+			    location   	(443, 989)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	234
+			    justify    	0
+			    label      	"physician")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5AAB5DD90109"
+			width      	252
+			height     	126
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$30" @40
+			location   	(469, 838)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5AAB61400371"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$31" @41
+				Parent_View 	@40
+				location   	(181, 406)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB614102D1"
+				client     	@40
+				supplier   	@39
+				line_style 	0)
+			    (object RoleView "$UNNAMED$32" @42
+				Parent_View 	@40
+				location   	(181, 406)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5AAB614102D2"
+				client     	@40
+				supplier   	@26
+				line_style 	0)))))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5AAB5D680167"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5AAB5D680178"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"5AAB5D680168"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5AAB5D68016A"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"DDL"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"DDL"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBase"
+			value      	("DataBaseSet" 800))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBaseSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"DDL"
+				name       	"ANSI"
+				value      	800)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Oracle"
+				value      	801)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"SQLServer"
+				value      	802)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Sybase"
+				value      	803)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Watcom"
+				value      	804)))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnName"
+			value      	"Id")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnType"
+			value      	"NUMBER(5)")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"ViewName"
+			value      	"V_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"TableName"
+			value      	"T_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"InheritSuffix"
+			value      	"_V")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DropClause"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"BaseViews"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DDLScriptFilename"
+			value      	"DDL1.SQL")))
+	    (object Attribute
+		tool       	"DDL"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"DDL"
+			name       	"ColumnType"
+			value      	"VARCHAR")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Length"
+			value      	"")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"NullsOK"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKey"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Unique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"CompositeUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"CheckConstraint"
+			value      	"")))
+	    (object Attribute
+		tool       	"DDL"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"IDL"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CreateMissingDirectories"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"StopOnError"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Directory"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GeneratePreserveRegions"
+			value      	TRUE)))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"ImplementationType"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"ConstValue"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateDefaultSpecifier"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"DefaultSpecifier"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IDLElement"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IDLSpecificationType"
+			value      	("IDLSpecSet" 22))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IDLSpecSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Interface"
+				value      	22)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Typedef"
+				value      	54)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Enumeration"
+				value      	8)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Const"
+				value      	71)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Exception"
+				value      	61)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Struct"
+				value      	51)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Union"
+				value      	81)))))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CmIdentification"
+			value      	(value Text "  %X% %Q% %Z% %W%"))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"FileName"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateIDLModule"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"InclusionProtectionSymbol"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"AdditionalIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IncludeBySimpleName"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Module-Body"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CmIdentification"
+			value      	(value Text "  %X% %Q% %Z% %W%"))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"FileName"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"AdditionalIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IncludeBySimpleName"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"OperationIsOneWay"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Context"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Raises"
+			value      	"")))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"CaseSpecifier"
+			value      	"")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"DataMemberName"
+			value      	"$relationship")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IsReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IsConst"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"ConstValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Has"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"NameIfUnlabeled"
+			value      	"the_$supplier")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"DataMemberName"
+			value      	"$relationship")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateForwardReference"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IsReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"BoundedHasRelType"
+			value      	("HasRelTypeSet" 47))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"HasRelTypeSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Array"
+				value      	24)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Sequence"
+				value      	47)))))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"NameIfUnlabeled"
+			value      	"the_$supplier")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"DataMemberName"
+			value      	"$relationship")
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateForwardReference"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"IsReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"IDL"
+			name       	"BoundedRoleType"
+			value      	("AssocTypeSet" 47))
+		    (object Attribute
+			tool       	"IDL"
+			name       	"AssocTypeSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Array"
+				value      	24)
+			    (object Attribute
+				tool       	"IDL"
+				name       	"Sequence"
+				value      	47)))))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Uses"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"GenerateForwardReference"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"default__Subsystem"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"IDL"
+			name       	"Directory"
+			value      	"AUTO GENERATE")))
+	    (object Attribute
+		tool       	"IDL"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Java"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"CreateMissingDirectories"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"StopOnError"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Directory"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"Java"
+			name       	"UsePrefixes"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"InstanceVariablePrefix"
+			value      	"m_")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ClassVariablePrefix"
+			value      	"s_")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultAttributeDataType"
+			value      	"int")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultOperationReturnType"
+			value      	"void")))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDefaultConstructor"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ConstructorIs"
+			value      	("Ctor_Set" 62))
+		    (object Attribute
+			tool       	"Java"
+			name       	"Ctor_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Public"
+				value      	62)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Protected"
+				value      	63)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Private"
+				value      	64)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFinalizer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateStaticInitializer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateInstanceInitializer"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"CmIdentification"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"AdditionalImports"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Module-Body"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"CmIdentification"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"AdditionalImports"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Abstract"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Static"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Native"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Synchronized"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Transient"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Volatile"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDataMember"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ContainerClass"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"InitialValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Transient"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Volatile"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"SCC"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"5AAB5D680169"))
